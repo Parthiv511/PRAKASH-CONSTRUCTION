@@ -1,4 +1,4 @@
-/* Reset */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,17 +6,19 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-html, body, #root {
-  height: 100%;
-  width: 100%;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .app {
   width: 100%;
-  overflow-x: hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   position: fixed;
   width: 100%;
@@ -25,7 +27,7 @@ html, body, #root {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(10px);
   z-index: 100;
 }
@@ -57,39 +59,36 @@ html, body, #root {
   color: #f4b400;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
   height: 100vh;
   width: 100%;
-  overflow: hidden;
   position: relative;
-  cursor: grab;
+  overflow: hidden;
 }
 
-.zoom-image {
+.hero-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.2s ease;
 }
 
-/* Cinematic overlay */
+/* Dark cinematic overlay */
 .hero::after {
   content: "";
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50%;
+  height: 60%;
   background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
-/* Caption */
 .hero-caption {
   position: absolute;
-  bottom: 80px;
+  bottom: 120px;
   left: 80px;
   color: white;
-  max-width: 600px;
+  max-width: 650px;
   z-index: 10;
 }
 
@@ -105,9 +104,25 @@ html, body, #root {
 .hero-caption p {
   font-size: 20px;
   line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-/* SECTION */
+.hero-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #f4b400;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #d89e00;
+}
+
+/* ================= SECTIONS ================= */
 .section {
   padding: 120px 10%;
   text-align: center;
@@ -126,7 +141,14 @@ html, body, #root {
   color: #f4b400;
 }
 
-/* CARDS */
+.section p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* ================= CARDS ================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -140,6 +162,7 @@ html, body, #root {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transition: 0.3s;
+  padding-bottom: 20px;
 }
 
 .card:hover {
@@ -157,26 +180,347 @@ html, body, #root {
 }
 
 .card p {
-  padding: 0 20px 20px;
+  padding: 0 20px;
   color: #555;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* ================= ACHIEVEMENTS ================= */
+.achievement-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.achievement-container img {
+  width: 450px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.achievement-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.achievement-text ul {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.achievement-text li {
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+/* ================= CONTACT ================= */
+.contact-section p {
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.contact-info {
+  text-align: left;
+  max-width: 300px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 350px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  background: #f4b400;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: #d89e00;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
   .hero-caption {
-    left: 30px;
-    bottom: 60px;
+    left: 40px;
+    bottom: 80px;
   }
 
   .hero-caption h1 {
-    font-size: 36px;
+    font-size: 42px;
   }
 
   .hero-caption p {
     font-size: 16px;
   }
 
+  .achievement-container {
+    flex-direction: column;
+  }
+
+  .achievement-container img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
   .header {
     padding: 0 20px;
   }
+
+  .header nav a {
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  .hero-caption h1 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 100px 5%;
+  }
+}
+.cta-section {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 100px 10%;
+}
+
+.cta-button {
+  background: #f4b400;
+  padding: 12px 30px;
+  border-radius: 8px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 80px 10%;
+  background: #f5f5f5;
+}
+
+.stat h3 {
+  font-size: 40px;
+  color: #f4b400;
+}
+
+.why-section, .gallery-section, .testimonial-section,
+.team-section, .awards-section, .clients-section,
+.map-section {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.why-grid, .testimonial-grid, .team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.clients-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.clients-logos img {
+  height: 60px;
+  opacity: 0.7;
+}
+
+.clients-logos img:hover {
+  opacity: 1;
+}
+/* TESTIMONIAL SECTION */
+.testimonial-section {
+  padding: 120px 10%;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.testimonial-section h2 {
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.testimonial-section span {
+  color: #f4b400;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
+  text-align: left;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.testimonial-card h4 {
+  font-weight: 600;
+  color: #111;
+}
+
+.stars {
+  color: #f4b400;
+  font-size: 22px;
+  margin-bottom: 20px;
+  letter-spacing: 4px;
+}
+/* FOOTER */
+.footer {
+  background: #f4b400; /* Yellow Background */
+  padding: 80px 10% 30px;
+}
+
+/* Grid Layout */
+.footer-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* Individual Box */
+.footer-box {
+  background: #ffffff; /* White boxes */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.footer-box:hover {
+  transform: translateY(-6px);
+}
+
+.footer-box h3,
+.footer-box h4 {
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.footer-box span {
+  color: #f4b400;
+}
+
+.footer-box p {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-box ul li {
+  margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+  color: #f4b400;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #f4b400;
+  color: #111;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  color: #111;
+  font-weight: 500;
 }
