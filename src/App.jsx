@@ -32,6 +32,9 @@ export default function App() {
           <a href="#contact">Contact</a>
         </nav>
       </header>
+    
+    
+
 
       {/* ================= HERO ================= */}
       <section id="home" className="hero">
@@ -66,57 +69,93 @@ export default function App() {
       </section>
 
       {/* ================= ABOUT ================= */}
-      <section id="about" className="section light">
-        <h2>About Us</h2>
-        <p>
-          Prakash Constructions delivers landmark residential and commercial
-          spaces built with precision, innovation, and sustainability.
-          With decades of experience, we transform ideas into modern
-          architectural excellence.
-        </p>
-      </section>
+     <section id="about" className="about-section">
+
+  <h2 className="sticky-title">
+    About <span>Us</span>
+  </h2>
+
+  <div className="about-container">
+
+    <div className="about-image">
+      <img src="/about1.jpg" alt="Construction Site" />
+    </div>
+
+    <div className="about-content">
+      <h3>Building Excellence Since 1992</h3>
+      <p>
+        Prakash Constructions delivers landmark residential and commercial
+        spaces built with precision, innovation, and sustainability.
+        With decades of experience, we transform ideas into modern
+        architectural excellence.
+      </p>
+
+      <p>
+        Our team of engineers, architects, and project managers ensures
+        structural integrity, modern design standards, and timely delivery.
+        We focus on quality materials, safety compliance, and customer satisfaction.
+      </p>
+
+      <ul>
+        <li>✔ 500+ Completed Projects</li>
+        <li>✔ 30+ Years Experience</li>
+        <li>✔ 100% Client Satisfaction</li>
+        <li>✔ Sustainable Construction Practices</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
 
       {/* ================= SERVICES ================= */}
-      <section id="services" className="section">
-        <h2>Our Services</h2>
+      <section id="services" className="services-section">
+  
+  <h2 className="services-title">
+    Our <span>Services</span>
+  </h2>
 
-        <div className="cards">
+  <div className="services-slider">
 
-          <div className="card">
-            <h3>Residential Construction</h3>
-            <p>
-              Custom homes and residential complexes built with precision,
-              quality materials, and modern design.
-            </p>
-          </div>
+    <div className="service-card">
+      <img src="/service1.jpg" alt="Residential" />
+      <h3>Residential Construction</h3>
+      <p>
+        Custom homes and residential complexes built with precision,
+        quality materials, and modern architectural excellence.
+      </p>
+    </div>
 
-          <div className="card">
-            <h3>Commercial Projects</h3>
-            <p>
-              Office buildings and commercial spaces designed for
-              functionality, durability, and business growth.
-            </p>
-          </div>
+    <div className="service-card">
+      <img src="/service2.jpg" alt="Commercial" />
+      <h3>Commercial Projects</h3>
+      <p>
+        Office buildings and commercial spaces designed for
+        functionality, durability, and long-term business growth.
+      </p>
+    </div>
 
-          <div className="card">
-            <h3>Infrastructure Development</h3>
-            <p>
-              Roads, bridges, and public infrastructure projects
-              that strengthen communities.
-            </p>
-          </div>
+    <div className="service-card">
+      <img src="/service3.jpg" alt="Infrastructure" />
+      <h3>Infrastructure Development</h3>
+      <p>
+        Roads, bridges, and public infrastructure projects that
+        strengthen communities and drive economic progress.
+      </p>
+    </div>
 
-          <div className="card">
-            <h3>Renovation & Remodeling</h3>
-            <p>
-              Transforming existing spaces into modern,
-              elegant structures with improved value.
-            </p>
-          </div>
+    <div className="service-card">
+      <img src="/service4.jpg" alt="Renovation" />
+      <h3>Renovation & Remodeling</h3>
+      <p>
+        Transforming existing spaces into elegant, modern,
+        and value-enhanced environments.
+      </p>
+    </div>
 
-        </div>
-      </section>
+  </div>
 
+</section>
       {/* ================= PROJECTS ================= */}
       <section id="projects" className="section light">
         <h2>
@@ -225,34 +264,65 @@ export default function App() {
   </div>
 </section>
 
-<section className="why-section">
+<section id="why" className="why-section">
   <h2>Why <span>Choose Us</span></h2>
-  <div className="why-grid">
-    <div className="why-card">
-      <h3>Premium Quality</h3>
-      <p>We deliver unmatched quality in every construction project.</p>
+
+  <div className="why-container">
+
+    {/* LEFT SIDE – Horizontal Scroll Images */}
+    <div className="why-images">
+      <div className="image-track">
+        <img src="/why1.jpg" alt="Premium Quality" />
+        <img src="/why2.jpg" alt="On Time Delivery" />
+        <img src="/why3.jpg" alt="Modern Technology" />
+        <img src="/why4.jpg" alt="Transparent Pricing" />
+      </div>
     </div>
-    <div className="why-card">
-      <h3>On-Time Delivery</h3>
-      <p>Strict timelines and disciplined project management.</p>
+
+    {/* RIGHT SIDE – Feature Cards */}
+    <div className="why-features">
+      <div className="feature-card">
+        <h3>Premium Quality</h3>
+        <p>We deliver unmatched construction standards using superior materials and expert craftsmanship.</p>
+      </div>
+
+      <div className="feature-card">
+        <h3>On-Time Delivery</h3>
+        <p>Strict timelines and disciplined project management ensure timely completion.</p>
+      </div>
+
+      <div className="feature-card">
+        <h3>Modern Technology</h3>
+        <p>Advanced engineering methods and smart construction tools for efficient execution.</p>
+      </div>
+
+      <div className="feature-card">
+        <h3>Transparent Pricing</h3>
+        <p>No hidden costs. Clear communication and professional project estimates.</p>
+      </div>
     </div>
-    <div className="why-card">
-      <h3>Modern Technology</h3>
-      <p>We use advanced engineering and smart construction methods.</p>
-    </div>
-    <div className="why-card">
-      <h3>Transparent Pricing</h3>
-      <p>No hidden costs. Clear and professional communication.</p>
-    </div>
+
   </div>
 </section>
+
 <section className="gallery-section">
   <h2>Project <span>Gallery</span></h2>
-  <div className="gallery-grid">
-    <img src="/gallery1.jpg" alt="Project 1" />
-    <img src="/gallery2.jpg" alt="Project 2" />
-    <img src="/gallery3.jpg" alt="Project 3" />
-    <img src="/gallery4.jpg" alt="Project 4" />
+
+  <div className="gallery-slider">
+    <div className="gallery-track">
+
+      <img src="/gallery1.jpg" alt="Project 1" />
+      <img src="/gallery2.jpg" alt="Project 2" />
+      <img src="/gallery3.jpg" alt="Project 3" />
+      <img src="/gallery4.jpg" alt="Project 4" />
+
+      {/* Duplicate for seamless infinite loop */}
+      <img src="/gallery1.jpg" alt="Project 1" />
+      <img src="/gallery2.jpg" alt="Project 2" />
+      <img src="/gallery3.jpg" alt="Project 3" />
+      <img src="/gallery4.jpg" alt="Project 4" />
+
+    </div>
   </div>
 </section>
 <section className="testimonial-section">
